@@ -1,0 +1,41 @@
+<section class="">
+
+    <h1 class="text-center text-green-600 text-3xl py-4">All Categories</h1>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+    @for (category of categories; track category._id) {
+        <div (click)="getSpecifidCate(category._id)" class="card border cursor-pointer border-green-400/50 rounded-md overflow-hidden shadow relative" >
+            <div>
+              <div class="card-img">
+                <img [src]="category.image" class="w-full h-[250px] object-contain" [alt]="category.name" />
+              </div>
+              <div class="card-body px-2 py-4">
+                <h3 class="font-medium text-center text-2xl">{{category.name}}</h3>
+              </div>
+            </div>
+          </div>
+    }
+    </div>
+
+
+</section>
+
+@if (subCategories) {
+  
+<section class="py-4">
+
+  <h2 class="text-center text-green-600 text-3xl py-4">{{categoryName()}} subCategories</h2>
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+    @for (subcategory of subCategories; track subcategory._id) {
+    <div class="card border border-green-400/50 rounded-md overflow-hidden shadow relative" >
+      <div>
+          <div class="card-body px-2 py-4">
+            <h3 class="font-medium text-center text-2xl">{{subcategory.name}}</h3>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+
+
+</section>
+}

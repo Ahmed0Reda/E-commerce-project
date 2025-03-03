@@ -1,0 +1,23 @@
+<section class="main-sec w-3/4">
+
+    <h1 class="text-center text-green-600 text-3xl">Check Out </h1>
+    <form [formGroup]="checkOutForm" > <!-- (ngSubmit)="submitForm()" -->
+        <div class="mb-1">
+            <label for="details" class="block mb-2 text-sm font-medium text-gray-900">details</label>
+            <textarea formControlName="details" id="details" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"></textarea>
+        </div>
+        <div class="mb-1">
+            <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">phone</label>
+            <input type="tel" formControlName="phone" id="phone" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"/>    
+        </div>
+        <div class="mb-1">
+            <label for="city" class="block mb-2 text-sm font-medium text-gray-900">city</label>
+            <input type="text" formControlName="city" id="city" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"/>    
+        </div>
+
+            <button [disabled]="checkOutForm.invalid" class="btn-main" (click)="submitForm()" type="submit">Online Payment</button>
+            <button [disabled]="checkOutForm.invalid" class="btn-main" (click)="cashPayment()">Cash Payment</button>
+
+    </form>
+
+</section>

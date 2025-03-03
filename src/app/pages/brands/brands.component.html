@@ -1,0 +1,20 @@
+<section class="">
+
+    <h1 class="text-center text-green-600 text-3xl py-4">All Brands</h1>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
+    @for (brand of brands; track brand._id) {
+        <div class="card border border-green-400/50 rounded-md overflow-hidden shadow relative" >
+            <div>
+              <div class="card-img">
+                <img [src]="brand.image" class="w-full h-[250px] object-contain" [alt]="brand.name" />
+              </div>
+              <div class="card-body px-2 py-4">
+                <h3 class="font-medium text-center text-2xl">{{brand.name}}</h3>
+              </div>
+            </div>
+          </div>
+    }
+    </div>
+
+
+</section>

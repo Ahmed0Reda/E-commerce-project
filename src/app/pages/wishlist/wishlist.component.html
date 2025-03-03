@@ -1,0 +1,20 @@
+<section class="main-sec w-3/4">
+    <h1 class="text-center text-3xl text-green-600"> Wish List   </h1>
+
+    @for (item of wishList ; track item.id) {
+        <div class="grid md:grid-cols-[10%_minmax(0,1fr)] border-b mb-2">
+
+            <figure>
+                <img [src]="item.imageCover" class="w-full h-[100px object-contain]" [alt]="item.title">
+            </figure>
+            <div class="flex justify-between items-center">
+                <div>
+                    <h3>{{item.title}}</h3>
+                    <h4>Price: {{item.price | currency:"GBP"}} </h4>
+                    <button (click)="removeItem(item.id)"> <i class="fas fa-trash-can text-green-600" ></i> Remove</button>
+                </div>
+            </div>  
+        </div>
+        <button (click)="addToCart(item.id)" class="bg-green-600 text-white py-2 px-10 border rounded w-[90%] mx-auto block">Add To Cart</button>
+    }
+</section>

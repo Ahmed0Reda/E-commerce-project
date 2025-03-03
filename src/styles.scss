@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import 'ngx-toastr/toastr';
+
+
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@300&display=swap");
+
+.btn-main{
+  @apply bg-green-600 text-white px-10 py-2 border rounded hover:bg-green-800 transition-colors duration-500;
+}
+
+.main-sec{
+  @apply mx-auto bg-gray-50 p-4 rounded border shadow;
+}
+// body{
+//   font-family: "Righteous", serif;
+// }
